@@ -1,11 +1,11 @@
 using autenticacao.Dtos;
 using autenticacao.Models;
+using M3S3_Autenticacao.Enums;
 
 namespace autenticacao.Repositories
 {
     public static class UserRepository
     {
-
         private static List<UserModel> usuarios = new List<UserModel>{
 
             new UserModel{
@@ -13,15 +13,15 @@ namespace autenticacao.Repositories
                 Email = "vitor@gmail.com",
                 Name = "Vitor",
                 Password = "123",
-                Role = "admin"
+                Role = Permissoes.Diretor
             },
 
-            new UserModel{
+            new UserModel {
                 Id = 2,
                 Email = "joao@gmail.com",
                 Name = "Joao",
                 Password = "123",
-                Role = "usuario"
+                Role = Permissoes.Professor
             }
        };
 

@@ -1,3 +1,5 @@
+using M3S3_Autenticacao.Enums;
+
 namespace autenticacao.Models
 {
     public class UserModel
@@ -6,6 +8,6 @@ namespace autenticacao.Models
         public string Email { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
+        public Permissoes Role { get; set; }
     }
 }
