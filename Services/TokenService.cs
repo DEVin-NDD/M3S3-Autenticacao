@@ -11,13 +11,13 @@ namespace autenticacao.Services
 {
     public static class TokenService
     {
-        public static string GenerateTokenFromUser(UserModel user)
+        public static string GenerateTokenFromUser(FuncionarioModel user)
         {
             var claims = new Claim[]
              {
-                    new Claim(ClaimTypes.Name, user.Name),
+                    new Claim(ClaimTypes.Name, user.Nome),
                     new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Role, user.Role.GetDisplayName())
+                    new Claim(ClaimTypes.Role, user.Permissao.GetDisplayName())
              };
 
             return GenerateTokenFromClaims(claims);

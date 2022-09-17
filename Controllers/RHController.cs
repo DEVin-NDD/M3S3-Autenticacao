@@ -25,7 +25,7 @@ namespace M3S3_Autenticacao.Controllers
         [Authorize(Roles = "Professor,Diretor")]
         public IActionResult AcessoProfessores()
         {
-            var ehDiretor = User.IsInRole(Permissoes.Diretor.GetDisplayName());
+            var ehDiretor = User.IsInRole(Permissoes.Funcionario.GetDisplayName());
 
             if (ehDiretor)
                 return Ok("Área exclusiva de professores. Bem-vindo, diretor");

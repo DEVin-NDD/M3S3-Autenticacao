@@ -16,13 +16,13 @@ namespace autenticacao.Controllers
         [Route("login")]
         public IActionResult Login([FromBody] UserDto dto){
 
-            var user = UserRepository.VerificarUsuarioESenha(dto);
+            var user = FuncionarioRepository.ObterPorUsuarioESenha(dto);
 
             if(user == null) return Unauthorized();
 
             var token = TokenService.GenerateTokenFromUser(user);
             var refreshToken = TokenService.GenerateRefreshToken();
-            TokenService.SaveRefreshToken(user.Name, refreshToken);
+            TokenService.SaveRefreshToken(user.Nome, refreshToken);
             
             return Ok(new {
                 token,
